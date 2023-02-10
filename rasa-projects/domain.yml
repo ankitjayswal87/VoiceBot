@@ -1,0 +1,112 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - say_name
+  - request_restaurant
+  - appointment_time
+  - out_of_scope
+  - my_name:
+      use_entities:
+        - name
+  - mobile_number:
+      use_entities:
+        - number
+  - book_appointment
+  - my_size:
+      use_entities:
+        - size
+
+entities:
+  - name
+  - number
+  - cuisine
+  - num_people
+  - PERSON
+  - size
+
+slots:
+  name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: PERSON
+  number:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: number
+  cuisine:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: cuisine
+  num_people:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: num_people
+forms:
+  restaurant_form:
+    required_slots:
+        - name
+        - number
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_say_name:
+  - text: "My name is Rasa Bot 3.0"
+  - text: "My name is Rasa Bot Advanced..."
+
+  utter_my_name:
+  - text: "What is your name?"
+
+  utter_mobile_number:
+  - text: "What is your mobile number?"
+
+  utter_thanks:
+  - text: "Thank you for providing information! {name} {number}"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_ask_name:
+  - text: "What is your name?"
+
+  utter_ask_number:
+  - text: "What is your mobile number?"
+
+  utter_ask_num_people:
+  - text: "How manu person you are?"
+
+  utter_out_of_scope:
+  - text: "I did not understand, can you please repeat that?"
+
+actions:
+  - action_submit
+  - action_reset_all_slots
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

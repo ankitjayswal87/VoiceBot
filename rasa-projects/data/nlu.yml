@@ -1,0 +1,144 @@
+version: "3.1"
+
+nlu:
+- lookup: size
+  examples: |
+    - small
+    - medium
+    - large
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: say_name
+  examples: |
+    - what is your name?
+    - tell me your name
+
+- intent: my_name
+  examples: |
+    - my name is [ankit]{"entity":"PERSON"}
+    - people call me [manthan]{"entity":"PERSON","value":"manthan"}
+    - you can say me [amey]{"entity":"PERSON","value":"amey"}
+
+- intent: mobile_number
+  examples: |
+    - my number is [9979272423]{"entity":"number"}
+    - [9979272423]{"entity":"number"}
+    - [9979272423]{"entity":"number"} is my number
+
+- intent: book_appointment
+  examples: |
+    - please book an appointment
+    - I want to book an appointment
+    - can you please book me an appointment
+    - appointment
+    - can I book an appointment
+
+- intent: request_restaurant
+  examples: |
+    - please book restaurant
+    - I want to book restaurant
+
+- intent: appointment_time
+  examples: |
+    - you can schedule for [tomorrow]
+    - you can schedule for [today] only
+    - you can schedule for [26th December 2022]
+    - you can schedule for [1st January 2023]
+
+- intent: my_size
+  examples: |
+    - my size is [medium]{"entity":"size"}
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: out_of_scope
+  examples: |
+    - who is sachin tendulkar?
+    - can you make pizza for me?
+    - who is the first world cup winner team in cricket
+    - whi is kapil dev?

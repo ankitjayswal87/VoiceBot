@@ -1,0 +1,63 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: out of scope handling
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+    #- story: ask name
+    #steps:
+    #- intent: greet
+    #- action: utter_greet
+    #- intent: say_name
+    #- action: utter_say_name
+    #- action: utter_did_that_help
+    #- intent: deny
+    #- action: utter_goodbye
+
+    #- story: collect information
+    #steps:
+    #- intent: say_name
+    #- action: utter_say_name
+    #- action: utter_my_name
+    #- intent: my_name
+    #entities:
+    #- name: "aman"
+    #- slot_was_set:
+    #- name: "aman"
+    #- action: utter_mobile_number
+    #- intent: mobile_number
+    #entities:
+    #- number: "9979271212"
+    #- slot_was_set:
+    #- number: "9979271212"
+    #- action: utter_thanks
