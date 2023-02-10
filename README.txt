@@ -1,1 +1,1 @@
-This repository contains code for VoiceBot. This VoiceBot is build with native Asterisk server. For STT and TTS MS Azure service is used. For NLU we used Rasa server.
+This repository contains code for VoiceBot. This VoiceBot is build with native Asterisk server. For STT and TTS MS Azure service is used. For NLU we used Rasa server. To unserstand more about the project you can visit my blog at, https://telephonyhub.in/2023/01/20/how-to-make-voice-bot-with-asterisk/
